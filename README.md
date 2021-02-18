@@ -12,7 +12,7 @@ Run `npm start` inside the directory where you cloned the repository to start th
 
 ## Test Endpoints
 
-Use the Postman Chrome extension or app to test the endpoints. Use `localhost:3000`
+Use the Postman Chrome extension or app to test the endpoints. Use `localhost:3000`. To send a JSON body with POST requests go to the body tab, select 'raw' and JSON(application/json) instead of 'Text'.
 
 # API Reference
 
