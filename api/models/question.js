@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 const questionSchema = mongoose.Schema({
-    inputTemperature: String,
-    inputUnits: String,
-    targetUnits: String,
-    studentResponse: String, 
-    correctAnswer: Number,
-    grade: String
+    inputTemperature: { type: String, required: true},
+    inputUnits: { type: String, required: true},
+    targetUnits: { type: String, required: true},
+    studentResponse: { type: String, required: true}, 
+    correctAnswer: { type: Number, required: true},
+    grade: { type: String, required: true}
 });
 
 module.exports =  questionSchema;
