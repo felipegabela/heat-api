@@ -4,7 +4,7 @@ Simple Node.js RESTful API that collects and grades heat worksheets.
 
 ## Install
 Install node.js and npm in your computer.
-Clone the repository. `git clone git@github.com:felipegabela/heat-api.git` 
+Clone the repository. `git clone https://github.com/felipegabela/heat-api.git` 
 Run `npm install` inside the directory where you cloned the repository to install all the dependencies.
 
 ## Run API 
@@ -12,7 +12,7 @@ Run `npm start` inside the directory where you cloned the repository to start th
 
 ## Test Endpoints
 
-Use the Postman Chrome extension or app to test the endpoints. Use localhost:3000/
+Use the Postman Chrome extension or app to test the endpoints. Use `localhost:3000`
 
 # API Reference
 
