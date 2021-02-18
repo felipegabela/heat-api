@@ -3,7 +3,8 @@ const app = express();
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 
-const gradingRoutes = require('./api/routes/grading');
+const gradingRoutes = require('./api/routes/grade');
+const reportingRoutes = require('./api/routes/reports');
 
 mongoose.connect(process.env.MONGO_ATLAS_URI,
     { useNewUrlParser: true, useUnifiedTopology: true }
@@ -27,7 +28,8 @@ app.use((req, res, next) => {
 });
 
 /** API Routes.  */
-app.use('/grading', gradingRoutes);
+app.use('/grade', gradingRoutes);
+app.use('/reports', reportingRoutes);
 
 /** Error handling.  */
 app.use((req, res, next) => {

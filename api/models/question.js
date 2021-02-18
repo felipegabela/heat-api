@@ -5,7 +5,7 @@ const questionSchema = mongoose.Schema({
     inputUnits: String,
     targetUnits: String,
     studentResponse: String, 
-    correctAnswer: String,
+    correctAnswer: Number,
     grade: String
 });
 

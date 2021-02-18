@@ -5,7 +5,8 @@ const worksheetSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     studentName: String,
     worksheetName: String,
-    worksheetGrade: String, 
+    worksheetGrade: Number, 
+    date: Date,
     questions: [questionSchema]
 });
 

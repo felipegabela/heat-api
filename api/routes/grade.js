@@ -9,6 +9,8 @@ const Grader = require('../helpers/grader');
 router.post('/', (req, res, next) => {
     const questions = [];
     const grader = new Grader();
+    let correct = 0;
+    let total = 0;
     req.body.questions.forEach(function (question) {
         // Throws error for invalid inputTemperature, inputUnits, targetUnits
         let correctAnswer;
@@ -21,25 +23,31 @@ router.post('/', (req, res, next) => {
         } catch(err) {
             throw new Error(err);
         }
+        const grade = grader.grade(question.studentResponse, correctAnswer);
         questions.push({
             inputTemperature: question.inputTemperature,
             inputUnits: question.inputUnits,
             targetUnits: question.targetUnits,
             studentResponse: question.studentResponse,
             correctAnswer: correctAnswer.toString(),
-            grade: grader.grade(question.studentResponse, correctAnswer)
+            grade: grade
         });
+        if(grade === 'Correct'){
+            correct++;
+        }
+        total++;
     });
     const worksheet = new Worksheet({
         _id: new mongoose.Types.ObjectId(),
         studentName: req.body.studentName,
         worksheetName: req.body.worksheetName,
-        worksheetGrade: 'Must be calculated',
+        worksheetGrade: correct/total * 100,
+        date: new Date(),
         questions: questions
     });
     worksheet
         .save()
-        .then(result => {
+        .then(() => {
             res.status(201).json({
                 message: 'Worksheet collected, graded, and stored.',
                 createdProduct: worksheet
