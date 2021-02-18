@@ -8,7 +8,7 @@ Clone the repository. `git clone git@github.com:felipegabela/heat-api.git`
 Run `npm install` inside the directory where you cloned the repository to install all the dependencies.
 
 ## Run API 
-Run `npm start` inside the directory where you cloned the repository
+Run `npm start` inside the directory where you cloned the repository to start the server.
 
 ## Test Endpoints
 
@@ -81,7 +81,7 @@ Example body:
 Reports is used to retrive graded worksheets. You can retrieve individual worksheets from a single student or all worksheet from a single student. 
 
 ### Endpoints 
-`GET /reports/:worksheetName/:studentName`
+`GET /reports/:worksheetName/:studentName` 
 `GET /reports/:studentName`
 
 You must replace spaces with hyphens. For example:
