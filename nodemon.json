@@ -1,0 +1,5 @@
+{
+    "env": {
+        "MONGO_ATLAS_URI": "mongodb+srv://root:Rootpassword@cluster0.dy2rj.mongodb.net/heatDatabase?retryWrites=true&w=majority"
+    }
+}
